@@ -1,0 +1,145 @@
+.playlists-modal {
+  padding: 14px;
+  height: 75vh;
+  width: 80vw;
+  max-width: 600px; /* Max width for large screens */
+  max-height: 600px; /* Max height */
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  
+  border-radius: 10px; /* Rounded corners */
+  background: #2a2a2a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for modal appearance */
+}
+
+.playlists-modal .search {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px; /* Increased spacing */
+  border-radius: 6px;
+  background: #484848;
+  color: rgba(255, 255, 255, 0.8);
+  transition: background 0.3s ease; /* Hover effect */
+
+}
+
+.playlists-modal .search:hover {
+  background: #5a5a5a;
+}
+
+.playlists-modal .search ion-icon {
+  font-size: 18px; /* Larger icon */
+}
+
+.playlists-modal .search input,
+.playlists-modal .search input:hover,
+.playlists-modal .search input:active {
+  margin-top: 2px;
+  width: 100%;
+  font-size: 14px;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.playlists-modal .search input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.playlists-modal .playlists {
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  overflow-y: auto; /* Enable scrolling */
+  scrollbar-width: thin; /* Custom scrollbar for Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent; /* Scrollbar color for Firefox */
+
+  /* Custom Scrollbar for WebKit (Chrome, Safari) */
+}
+
+.playlists-modal .playlists::-webkit-scrollbar {
+  width: 8px;
+}
+
+.playlists-modal .playlists::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.playlists-modal .playlists::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.playlists-modal .playlists li {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.3s ease; /* Add hover effect for items */
+  cursor: pointer;
+}
+
+.playlists-modal .playlists li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.playlists-modal .playlists li img {
+  height: 100%;
+  width: 50px; /* Set width for the image */
+  object-fit: cover; /* Ensure the image maintains aspect ratio */
+  border-radius: 6px 0 0 6px;
+}
+
+/* Mobile Screen Adjustments */
+@media screen and (max-width: 768px) {
+  .playlists-modal {
+    width: 90vw;
+    height: 70vh;
+    max-width: none; /* Remove max width for small screens */
+    max-height: none; /* Remove max height for small screens */
+    padding: 12px;
+  }
+
+  .playlists-modal .search ion-icon {
+    font-size: 16px; /* Smaller icon for mobile */
+  }
+
+  .playlists-modal .playlists {
+    row-gap: 8px; /* Reduce spacing */
+  }
+
+  .playlists-modal .playlists li {
+    height: 45px; /* Smaller list items */
+  }
+
+  .playlists-modal .playlists li img {
+    width: 40px; /* Smaller images */
+  }
+}
+
+/* Animation for modal appearance */
+.playlists-modal.enter-active {
+  transform: translate(-50%, -45%);
+  opacity: 0;
+}
+
+.playlists-modal.enter-done {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}

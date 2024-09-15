@@ -1,0 +1,204 @@
+/* App Styles */
+.app {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app .main {
+  height: calc(100vh - 90px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e1e1e, #282828);
+  transition: background 0.5s ease;
+}
+
+.app.light-mode .main {
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  color: #121212;
+}
+
+/* General Layout Enhancements */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Neumorphism Buttons */
+.btn-neumorphic {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #282828;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #1a1a1a, -10px -10px 20px #333333;
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-neumorphic:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 16px #1a1a1a, -8px -8px 16px #333333;
+}
+
+.btn-neumorphic:active {
+  transform: translateY(1px);
+  box-shadow: inset 5px 5px 12px #1a1a1a, inset -5px -5px 12px #333333;
+}
+
+.app.light-mode .btn-neumorphic {
+  background: #e0e0e0;
+  box-shadow: 10px 10px 20px #cccccc, -10px -10px 20px #ffffff;
+  color: #121212;
+}
+
+.app.light-mode .btn-neumorphic:hover {
+  box-shadow: 8px 8px 16px #cccccc, -8px -8px 16px #ffffff;
+}
+
+/* Glassmorphism Card */
+.card-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-glass:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+.app.light-mode .card-glass {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated Sliders */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #fff 0%, #fff var(--slider-percentage), #ffffff66 var(--slider-percentage), #ffffff66 100%);
+  transition: background 0.3s ease;
+}
+
+/* Thumb Style */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}
+
+.slider:hover {
+  background: linear-gradient(to right, #1db954 0%, #1db954 var(--slider-percentage), #ffffff66 var(--slider-percentage), #ffffff66 100%);
+}
+
+/* Dark/Light Mode Toggle */
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.toggle-switch::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 2px;
+  left: 2px;
+  transition: all 0.4s ease;
+}
+
+.toggle-switch.active {
+  background-color: #1db954;
+}
+
+.toggle-switch.active::before {
+  transform: translateX(30px);
+}
+
+.app.light-mode .toggle-switch {
+  background-color: #57b65f;
+}
+
+/* Advanced Animations */
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+.card-glass {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Mobile Screen */
+@media screen and (max-width: 540px) {
+  .app .main {
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .slider {
+    width: 90%;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .btn-neumorphic {
+    padding: 8px 16px;
+  }
+}

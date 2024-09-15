@@ -1,0 +1,97 @@
+/* Track Modal */
+.track-modal {
+  padding: 36px 36px 24px 36px;
+  width: 80vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  row-gap: 18px;
+  border-radius: 5px;
+  background: #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.track-modal .track-player,
+.track-modal .progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.track-modal .track-info,
+.track-modal .song-timings,
+.track-modal .controls,
+.track-modal .track-options {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.track-modal .icon {
+  height: 24px;
+}
+
+.track-modal .icon ion-icon {
+  font-size: 24px;
+}
+
+.track-modal > div {
+  width: 100%;
+}
+
+.track-modal .track-image {
+  text-align: center;
+}
+
+.track-modal .track-image img {
+  width: 80%;
+  border-radius: 8px;
+}
+
+.track-modal .track-info .song .song-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.track-modal .track-info .song .song-artist {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.track-modal .track-player div {
+  width: 100%;
+}
+
+.track-modal .progress-bar .slider {
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.track-modal .controls .icon {
+  height: 28px;
+  width: 28px;
+}
+
+.track-modal .controls .icon ion-icon {
+  font-size: 28px;
+}
+
+.track-modal .controls .icon.play-btn {
+  height: 60px;
+  width: 60px;
+}
+
+.track-modal .controls .icon.play-btn ion-icon {
+  font-size: 60px;
+}
+
+.track-modal .track-options .track-options-right .icon {
+  margin-left: 18px;
+}

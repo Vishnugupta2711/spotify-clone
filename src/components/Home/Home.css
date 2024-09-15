@@ -1,0 +1,208 @@
+/* Main Home Styles */
+.home {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background: #121212;
+}
+
+.home .home-inside {
+  background: linear-gradient(180deg, #1d0d46, #121212 360px);
+}
+
+/* Hover Effect for Links */
+.home a:hover {
+  text-decoration: underline;
+  color: #1db954;
+  transition: color 0.3s ease;
+}
+
+/* Home Container */
+.home .home-container {
+  padding: 18px 32px;
+  transition: padding 0.3s ease;
+}
+
+.home .home-container section {
+  padding-bottom: 36px;
+}
+
+/* Heading and Title Area */
+.home .home-container section .heading {
+  padding-bottom: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home .home-container section .heading h1,
+.home .home-container section .heading h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.home .home-container section .heading .more-link {
+  font-size: 14px;
+  color: #b3b3b3;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.home .home-container section .heading .more-link:hover {
+  color: #fff;
+}
+
+/* Content Grid Area */
+.home .home-container section .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+  transition: grid-gap 0.3s ease;
+}
+
+@media (min-width: 1500px) {
+  .home .home-container section .content {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .home .home-container section .content {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 972px) and (max-width: 1300px) {
+  .home .home-container section .content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 772px) and (max-width: 972px) {
+  .home .home-container section .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Section-specific Styles */
+.home .home-container section .section-1 .content {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px 24px;
+}
+
+@media (max-width: 878px) {
+  .home .home-container section .section-1 .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Smooth Hover Effect for Cards */
+.home .content .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.home .content .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.home .content .card .card-image {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.home .content .card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.home .content .card .card-image:hover img {
+  transform: scale(1.05);
+}
+
+.home .content .card .card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  padding-top: 12px;
+}
+
+.home .content .card .card-subtitle {
+  font-size: 14px;
+  color: #b3b3b3;
+  padding-top: 6px;
+}
+
+/* Scrollbar Customization */
+.home::-webkit-scrollbar {
+  width: 10px;
+}
+
+.home::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.home::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.home::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Mobile View Styles */
+@media screen and (max-width: 540px) {
+  .home .home-container {
+    padding: 12px;
+  }
+
+  .home .home-container section {
+    padding-bottom: 16px;
+  }
+
+  .home .home-container section .heading {
+    padding-bottom: 6px;
+  }
+
+  .home .home-container section .heading h1,
+  .home .home-container section .heading h2 {
+    font-size: 18px;
+  }
+
+  .home .home-container section .heading .more-link {
+    font-size: 12px;
+  }
+
+  .home .home-container section .content {
+    display: flex;
+    overflow-x: scroll;
+    grid-gap: 12px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .home .home-container section .content .card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    min-width: 150px;
+  }
+
+  .home .home-container .section-1 .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 12px;
+  }
+}

@@ -1,0 +1,222 @@
+.navbar,
+.navbar-left,
+.navbar-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(29, 13, 70, 0.5);
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar button:disabled {
+  cursor: not-allowed;
+}
+
+.navbar .navbar-left {
+  column-gap: 8px;
+}
+
+.navbar .navbar-left button {
+  position: relative;
+}
+
+.navbar .navbar-left button ion-icon {
+  font-size: 40px;
+  color: #000;
+}
+
+.navbar .navbar-left button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  z-index: -1;
+}
+
+.navbar .navbar-left .play-btn {
+  width: 60px;
+}
+
+.navbar .navbar-left .play-btn ion-icon {
+  font-size: 58px;
+  color: #57b65f;
+}
+
+.navbar .navbar-left .play-btn::before {
+  background: #000;
+}
+
+.navbar .navbar-left .play-btn:hover ion-icon {
+  font-size: 60px;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar .navbar-left .forward {
+    display: none;
+  }
+}
+
+.navbar .navbar-right {
+  column-gap: 32px;
+}
+
+.navbar .navbar-right button {
+  height: 34px;
+  border-radius: 20px;
+}
+
+.navbar .navbar-right .playlist-btn {
+  display: none;
+}
+
+.navbar .navbar-right .upgrade-btn {
+  padding: 0 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+}
+
+.navbar .navbar-right .upgrade-btn:hover {
+  background: #000;
+  border: 1.8px solid rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar .navbar-right .upgrade-btn {
+    display: none;
+  }
+}
+
+.navbar .navbar-right .menu {
+  position: relative;
+}
+
+.navbar .navbar-right .menu .menu-list {
+  position: absolute;
+  top: 56px;
+  right: 32px;
+  padding: 4px;
+  border-radius: 3px;
+  background: #282828;
+  display: none;
+}
+
+.navbar .navbar-right .menu .menu-list li {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 2px;
+  cursor: default;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.navbar .navbar-right .menu .menu-list li ion-icon {
+  padding-left: 16px;
+  font-size: 16px;
+}
+
+.navbar .navbar-right .menu .menu-list li.logout {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar .navbar-right .menu .menu-list li:hover {
+  background: #3e3e3e;
+}
+
+.navbar .navbar-right .menu .menu-list li.logout:hover {
+  border-top: 1px solid transparent;
+}
+
+.navbar .navbar-right .menu .menu-btn {
+  column-gap: 4px;
+  padding: 2px 8px 2px 2px;
+  background: #0a0713;
+}
+
+.navbar .navbar-right .menu .menu-btn img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.navbar .navbar-right .menu .menu-btn ion-icon {
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.navbar .navbar-right .menu.active .menu-list {
+  display: block;
+}
+
+.navbar .navbar-right .menu.active .menu-btn ion-icon {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar .navbar-right .menu-btn {
+    padding: 2px;
+  }
+
+  .navbar .navbar-right .menu-btn h4,
+  .navbar .navbar-right .menu-btn ion-icon {
+    display: none;
+  }
+
+  .navbar .navbar-right .menu.active {
+    padding: 2px;
+  }
+}
+
+/* Mobile Screen */
+@media screen and (max-width: 540px) {
+  .navbar {
+    padding: 0 16px;
+    height: 52px;
+  }
+
+  .navbar .navbar-left button {
+    display: none;
+  }
+
+  .navbar .navbar-right {
+    column-gap: 12px;
+  }
+
+  .navbar .navbar-right .playlist-btn {
+    display: flex;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: #0a0713;
+  }
+
+  .navbar .navbar-right .playlist-btn ion-icon {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .playlist-modal-container {
+    display: none;
+  }
+}

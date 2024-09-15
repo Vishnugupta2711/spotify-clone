@@ -1,0 +1,152 @@
+.card {
+  padding: 16px;
+  min-width: 120px;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Card Image */
+.card .image {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card .image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card .image:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.card .image.artist img {
+  border-radius: 50%;
+}
+
+/* Play Button */
+.card .image .play-btn {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 60px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card .image .play-btn ion-icon {
+  font-size: 58px;
+  color: #57b65f;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.card .image .play-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.card .image .play-btn:hover ion-icon {
+  font-size: 62px;
+  color: #1db954;
+}
+
+.card .image:hover .play-btn {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+/* Card Text */
+.card .text {
+  padding-top: 22px;
+  text-align: center;
+}
+
+.card .text .card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.card .text .card-subtitle {
+  font-size: 14px;
+  padding-top: 8px;
+  color: #b3b3b3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card:hover .text .card-title {
+  color: #1db954;
+}
+
+/* Hover effects for text */
+.card:hover .card-title {
+  color: #57b65f;
+}
+
+/* Glassmorphism effect for the play button on hover */
+.play-btn::before {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Screen */
+@media screen and (max-width: 540px) {
+  .card {
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  .card .image img {
+    border-radius: 0;
+  }
+
+  .card .image .play-btn {
+    display: none;
+  }
+
+  .card .text {
+    padding-top: 10px;
+    text-align: left;
+  }
+
+  .card .text .card-title {
+    display: none;
+  }
+
+  .card .text .card-subtitle {
+    padding: 0;
+  }
+}

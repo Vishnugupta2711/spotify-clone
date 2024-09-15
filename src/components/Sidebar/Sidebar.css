@@ -1,0 +1,108 @@
+.sidebar {
+  padding: 30px 0 0 24px;
+  height: calc(100vh - 90px);
+  width: 254px;
+  background-color: #000;
+  position: relative;
+}
+
+.sidebar .logo img {
+  height: 36px;
+}
+
+.sidebar .nav {
+  margin: 0 24px 2px 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.sidebar .playlists {
+  padding-top: 8px;
+  height: 296px; /* Not responsive */
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.sidebar .playlists li {
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.65;
+  transition: opacity 1s;
+}
+
+.sidebar .playlists li:hover {
+  opacity: 1;
+}
+
+.sidebar .playlists li a {
+  cursor: default;
+}
+
+.sidebar .install {
+  height: 40px;
+}
+
+.sidebar .nav-item {
+  padding: 8px 0;
+}
+
+.sidebar .nav-item a {
+  display: flex;
+  align-items: center;
+  column-gap: 18px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sidebar .nav-item a .icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar .nav-item a .icon ion-icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+.sidebar .nav-item a .icon.custom-icon {
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.sidebar .nav-item a .icon.custom-icon ion-icon {
+  font-size: 16px;
+  color: #000;
+}
+
+.sidebar .nav-item a .icon.custom-icon.heart {
+  background: linear-gradient(135deg, #6d28d9, #93c5fd);
+}
+
+.sidebar .nav-item a .icon.custom-icon.heart ion-icon {
+  font-size: 14px;
+  color: #fff;
+}
+
+.sidebar .nav-item {
+  opacity: 0.65;
+  transition: opacity 1s;
+}
+
+.sidebar .nav-item:hover {
+  opacity: 1;
+}
+
+.sidebar .nav-item.active {
+  opacity: 1;
+}
+
+/* Mobile Screen */
+@media screen and (max-width: 540px) {
+  .sidebar {
+    display: none;
+  }
+}
