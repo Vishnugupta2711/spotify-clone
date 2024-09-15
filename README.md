@@ -10,7 +10,6 @@ git clone https://github.com/Vishnugupta2711/spotify-clone.git
 2.Install dependencies:
 
 ```bash
-bash
 cd spotify-clone
 npm install
 ```
